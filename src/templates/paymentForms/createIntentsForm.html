@@ -1,0 +1,36 @@
+<div class="card-wrapper"></div>
+<div class="payment-form-fields" >
+            
+        {% include 'commerce/_components/gateways/_creditCardFields' %}
+    </div>
+    {% if clientKey is defined %}
+
+    {% endif %}
+    <div class="card-errors" role="alert"></div>
+    {% if billingAddress is defined %}
+        <div class="paymongo-address hidden">
+            <input type="hidden" name="paymongo-line1" value="{{ billingAddress.address1 }}" />
+            <input type="hidden" name="paymongo-postal-code" value="{{ billingAddress.zipCode }}" />
+            <input type="hidden" name="paymongo-city" value="{{ billingAddress.city }}" />
+            {% if billingAddress.country is not null %}
+                <input type="hidden" name="paymongo-country" value="{{ billingAddress.country.iso }}" />
+            {% endif %}
+            <input type="hidden" name="paymongo-state" value="{{ billingAddress.state }}" />
+        </div>
+    {% endif %}
+
+    <script>
+        (function(){
+         new Card({
+                form: document.querySelector('form#paymentForm'),
+                container: '.card-wrapper',
+                formSelectors: {
+                    nameInput: 'input[name="firstName"], input[name="lastName"]',
+                },
+                messages: {
+                    validDate: 'expire\ndate',
+                    monthYear: 'mm/yyyy'
+                }
+            });
+        });
+    </script>

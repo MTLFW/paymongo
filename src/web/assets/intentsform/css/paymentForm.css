@@ -1,0 +1,151 @@
+.paymongo-payment-intents-form {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    padding: 9px 33px;
+    margin: 0 auto 18px;
+}
+
+fieldset.card-holder legend,fieldset.card-data legend{
+    display: none;
+}
+
+#paymentForm fieldset {
+	border: none;
+}
+
+.paymentSource-form .grid{
+    display: block;
+}
+
+
+.paymongo-payment-intents-form input {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 9px;
+	border-radius: 3px;
+	box-shadow: none;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	font-size: 13px;
+	width: 100%;
+}
+fieldset.card-data > .multitext{
+    display: inline-flex;
+}
+
+fieldset.card-data .card-number{
+    border: none;
+}
+
+fieldset.card-data .multitext .multitextrow{
+    display: flex;
+    margin: 0px -10px;
+    width: 60%;
+    text-align: right;
+}
+fieldset.card-data .card-expiry{
+    border: none;
+    width: 60%;
+    margin: auto -10px auto 36px !important;
+    text-align: right;
+}
+
+fieldset.card-data .card-cvc{
+    border: none;
+    width: 28%;
+}
+
+fieldset.card-holder input {
+	width: 100%;
+	margin-bottom: 9px;
+}
+.has-error{
+    border:1px solid #ea0c0c !important; 
+    color: #ea0c0c;
+}
+
+.has-error-no-border{
+    color: #ea0c0c;
+}
+
+
+.card-errors{
+    margin-bottom: 9px;
+    font-size: 15px;
+    color: #ea0c0c;
+}
+
+
+@media only screen and (max-width: 480px){
+     .card-wrapper {
+         background-color:transparent !important;
+         
+        }
+
+        .paymongo-payment-intents-form{
+            padding: 9px 12px !important;
+        }
+    
+        .jp-card {
+            min-width: 100%  !important;
+        }
+        .jp-card-container{
+            width: 100% !important;
+            transform: scale(.95,0.500) !important;
+        }
+        fieldset.card-data > .multitext{
+            display: block;
+        }
+        fieldset.card-data > .multitext > text{
+            margin: 10px 5px !important;
+        }
+        fieldset.card-data .multitext .multitextrow{
+            width: unset !important;
+        }
+        fieldset.card-data .card-expiry {
+            width: 55% !important;
+            margin: auto 0px auto 12px !important;
+            text-align: left !important;
+        }
+        
+        fieldset.card-data .card-cvc{
+            width: 35% !important;
+        }
+        fieldset.card-data .card-number{
+            width: 95% !important;
+        }
+        .card-errors{
+            font-size: 14px !important;
+        }
+
+        /* FLIPPIN CARD */
+        .jp-card .jp-card-front .jp-card-lower .jp-card-number {           
+            font-size: 13px !important;
+            margin-bottom: 25px !important;
+            margin-top: 25px !important;
+        }
+
+        .jp-card .jp-card-front .jp-card-lower .jp-card-name {           
+            font-size: 13px !important;
+            max-height: 36px !important;
+        }
+        .jp-card .jp-card-front .jp-card-cvc, .jp-card .jp-card-back .jp-card-cvc {
+            font-size: 12px !important;
+        }
+        .jp-card .jp-card-front .jp-card-shiny{
+            width: 32px !important;
+        }
+        .jp-card .jp-card-front .jp-card-logo{
+            top: 13% !important;
+        }
+        .jp-card .jp-card-front .jp-card-lower .jp-card-expiry {
+            width: 36% !important;
+        }
+        .jp-card .jp-card-front .jp-card-lower .jp-card-name{
+            width: 70px !important;
+        }
+}
+

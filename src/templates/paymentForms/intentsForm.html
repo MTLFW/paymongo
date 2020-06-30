@@ -1,0 +1,23 @@
+<div class="paymongo-payment-intents-form"
+     data-appKey="{{ parseEnv(gateway.apiKey) }}"
+    {% if clientSecret is defined %}data-client-secret="{{clientSecret}}" {% endif %}
+    {% if scenario is defined %}data-scenario="{{scenario}}" {% endif %}
+>
+
+    <div class="payment-form-fields hidden">
+        {% include 'commerce/_components/gateways/_creditCardFields' %}
+    </div>
+
+    <div class="card-errors" role="alert"></div>
+    {% if billingAddress is defined %}
+        <div class="paymongo-address hidden">
+            <input type="hidden" name="paymongo-line1" value="{{ billingAddress.address1 }}" />
+            <input type="hidden" name="paymongo-postal-code" value="{{ billingAddress.zipCode }}" />
+            <input type="hidden" name="paymongo-city" value="{{ billingAddress.city }}" />
+            {% if billingAddress.country is not null %}
+                <input type="hidden" name="paymongo-country" value="{{ billingAddress.country.iso }}" />
+            {% endif %}
+            <input type="hidden" name="paymongo-state" value="{{ billingAddress.state }}" />
+        </div>
+    {% endif %}
+</div>
